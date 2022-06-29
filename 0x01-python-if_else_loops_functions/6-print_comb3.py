@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-for num in range(1, 90):
-    if num < 10:
-        print("0{:d}".format(num), end=", ")
-    elif num == 89:
-        print(num)
-    else:
-        print("{:d}".format(num), end=", ")
+
+for i in range(0, 10):
+    for j in range(1, 10):
+        if i >= j:
+            continue
+        if i == 8 and j == 9:
+            print("{:d}{:d}".format(i, j))
+        else:
+            print("{:d}{:d}".format(i, j), end=", ")
