@@ -1,16 +1,19 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-last_digit = int(str(number)[-1])
 
+# check for negative numbbers
 if number < 0:
-    if last_digit == 0:
-        print(f"Last digit of {number:d} is {last_digit:d} and is 0")
-    else:
-        print(f"Last digit of {number:d} is -{last_digit:d} and  is less than 6 and not 0")
-elif last_digit > 5:
-    print(f"Last digit of {number:d} is {last_digit:d} and is greater than 5")
-elif last_digit < 6 and last_digit != 0:
-    print(f"Last digit of {number:d} is {last_digit:d} and is less than 6 and not 0")
+    lastDigit = -((-1*number) % 10)
 else:
-    print(f"Last digit of {number:d} is {last_digit} and is 0")
+    lastDigit = number % 10
+
+# check the last digit of the number
+if lastDigit == 0:
+    print("Last digit of {:d} is {:d} and is 0".format(number, lastDigit))
+elif lastDigit > 5:
+    print("Last digit of {:d} is {:d} and is greater\
+ than 5".format(number, lastDigit))
+elif lastDigit < 6 and lastDigit != 0:
+    print("Last digit of {:d} is {:d} and is\
+ less than 6 and not 0".format(number, lastDigit))
